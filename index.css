@@ -1,0 +1,108 @@
+/* Relative units -- vh, vw , %, em, rem */
+/* vh - viewport height --  85vh -- 85% of the available screen height */
+/* vw - viewport width -- 50vw -- 50 % of available screen width */
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.hero {
+  height: 80vh;
+  background-image: url("./images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+#desktop-nav {
+  display: none;
+}
+#mobile-nav {
+  display: none;
+}
+#mobile-nav.active {
+  display: block;
+  background-color: black;
+  position: fixed;
+  inset: 0; /*top 0 right 0 left 0 bottom ----- - -- - position property(fixed, relative,absolute,sticky)*/
+  /* transitions and transformation */
+  padding: 20px;
+}
+#mobile-nav .nav-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+#mobile-nav a {
+  display: block;
+  font-size: 25px;
+  margin-top: 16px;
+  text-decoration: none;
+  color: white;
+}
+#mobile-nav button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#mobile-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+#mobile-menu:hover {
+  transform: scale(1.2);
+}
+.hero .heading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.hero h1 {
+  color: white;
+  border: 3px solid white;
+  padding: 25px;
+  color: white;
+  font-size: 30px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+@media (min-width: 370px) {
+  .hero h1 {
+    font-size: 45px;
+  }
+}
+@media (min-width: 870px) {
+  .hero h1 {
+    font-size: 55px;
+    width: 50%;
+  }
+  .hero {
+    background-image: url("./images/desktop/image-hero.jpg");
+  }
+  #mobile-menu {
+    display: none;
+  }
+  #mobile-nav.active {
+    display: none;
+  }
+  #desktop-nav {
+    display: block;
+  }
+  #desktop-nav a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+  }
+}
